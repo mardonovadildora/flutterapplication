@@ -18,18 +18,99 @@ class SigninScreen extends StatelessWidget {
         child: Column(
           children: [
             const Logoandtitle(),
+            const SizedBox(
+              height: 16,
+            ),
             Form(
-                child: Column(
-              children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                      prefix: Icon(
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(color: Colors.grey),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFF001254),
+                          ),
+                        ),
+                        prefix: const Icon(
+                          Iconsax.direct_right,
+                        ),
+                        labelText: 'E-Mail'),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        borderSide: const BorderSide(color: Colors.grey),
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFF001254),
+                        ),
+                      ),
+                      prefix: const Icon(
                         Iconsax.direct_right,
                       ),
-                      labelText: 'E-Mail'),
-                ),
-              ],
-            ))
+                      labelText: 'Password',
+                      suffixIcon: const Icon(Iconsax.eye_slash),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Checkbox(value: true, onChanged: (value) {}),
+                          const Text('Remember Me'),
+                        ],
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: const Text('Forget Password'))
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF6750A4),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          )),
+                      child: const Text(
+                        'Sign in',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF6750A4),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          )),
+                      child: const Text(
+                        'Crate new Account',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       )),
