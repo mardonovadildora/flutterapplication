@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapplication/newaccaunt.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SigninScreen extends StatelessWidget {
@@ -96,7 +98,9 @@ class SigninScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const CreateNewAccaunt());
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF6750A4),
                           shape: RoundedRectangleBorder(
