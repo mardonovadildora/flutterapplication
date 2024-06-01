@@ -12,6 +12,7 @@ class _CreateNewAccauntState extends State<CreateNewAccaunt> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.only(top: 56, left: 16.0, right: 16.0),
         child: Column(
@@ -28,7 +29,7 @@ class _CreateNewAccauntState extends State<CreateNewAccaunt> {
                   child: TextFormField(
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(10.0),
                         borderSide: const BorderSide(color: Colors.grey),
                       ),
                       focusedBorder: const OutlineInputBorder(
@@ -36,11 +37,11 @@ class _CreateNewAccauntState extends State<CreateNewAccaunt> {
                           color: Color(0xFF001254),
                         ),
                       ),
-                      prefix: const Icon(
+                      prefixIcon: const Icon(
                         Iconsax.direct_right,
                       ),
                       labelText: 'First Name',
-                      suffixIcon: const Icon(Iconsax.user),
+                      //suffixIcon: const Icon(Iconsax.user),
                     ),
                   ),
                 ),
@@ -49,7 +50,7 @@ class _CreateNewAccauntState extends State<CreateNewAccaunt> {
                   child: TextFormField(
                       decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: const BorderSide(color: Colors.grey),
                     ),
                     focusedBorder: const OutlineInputBorder(
@@ -57,33 +58,135 @@ class _CreateNewAccauntState extends State<CreateNewAccaunt> {
                         color: Color(0xFF001254),
                       ),
                     ),
-                    prefix: const Icon(
+                    prefixIcon: const Icon(
                       Iconsax.direct_right,
                     ),
                     labelText: 'Last Name',
-                    suffixIcon: const Icon(Iconsax.user),
+                    //suffixIcon: const Icon(Iconsax.user),
                   )),
                 ),
               ],
             ),
             const SizedBox(height: 16),
-            Expanded(
-              child: TextFormField(
-                  decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                  borderSide: const BorderSide(color: Colors.grey),
+            TextFormField(
+                decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: const BorderSide(color: Colors.grey),
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0xFF001254),
                 ),
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFF001254),
+              ),
+              prefixIcon: const Icon(
+                Iconsax.user_edit,
+              ),
+              labelText: 'Username',
+              //suffixIcon: const Icon(Iconsax.user),
+            )),
+            const SizedBox(height: 16),
+            TextFormField(
+                decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: const BorderSide(color: Colors.grey),
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0xFF001254),
+                ),
+              ),
+              prefixIcon: const Icon(
+                Iconsax.password_check,
+              ),
+              labelText: 'E-Mail',
+            )),
+            const SizedBox(height: 16),
+            TextFormField(
+                decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: const BorderSide(color: Colors.grey),
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0xFF001254),
+                ),
+              ),
+              prefixIcon: const Icon(
+                Iconsax.direct,
+              ),
+              labelText: 'Phone number',
+              //suffixIcon: const Icon(Iconsax.password_check4),
+            )),
+            const SizedBox(height: 16),
+            TextFormField(
+                decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: const BorderSide(color: Colors.grey),
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0xFF001254),
+                ),
+              ),
+              prefixIcon: const Icon(
+                Iconsax.call,
+              ),
+              labelText: 'Password',
+              //suffixIcon: const Icon(Iconsax.d_cube_scan),
+            )),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Checkbox(value: true, onChanged: (value) {}),
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                          text: 'I agree to',
+                          style: Theme.of(context).textTheme.bodyMedium),
+                      TextSpan(
+                        text: 'Privacy Policy',
+                        style: Theme.of(context).textTheme.bodyMedium!.apply(
+                              color: const Color(0xFF4B68ff),
+                              decoration: TextDecoration.underline,
+                              decorationColor: const Color(0xFF4B68ff),
+                            ),
+                      ),
+                      TextSpan(
+                          text: 'and',
+                          style: Theme.of(context).textTheme.bodyMedium),
+                      TextSpan(
+                        text: 'Terms of use',
+                        style: Theme.of(context).textTheme.bodyMedium!.apply(
+                              color: const Color(0xFF4B68ff),
+                              decoration: TextDecoration.underline,
+                              decorationColor: const Color(0xFF4B68ff),
+                            ),
+                      ),
+                    ],
                   ),
                 ),
-                prefix: const Icon(
-                  Iconsax.direct_right,
+              ],
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF6750A4),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    )),
+                child: const Text(
+                  'Sign in',
+                  style: TextStyle(color: Colors.white),
                 ),
-                labelText: 'Username',
-              )),
+              ),
             ),
           ],
         ),
