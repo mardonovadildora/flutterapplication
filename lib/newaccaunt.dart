@@ -188,6 +188,31 @@ class _CreateNewAccauntState extends State<CreateNewAccaunt> {
                 ),
               ),
             ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                const Flexible(
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+                    indent: 40,
+                    endIndent: 5,
+                  ),
+                ),
+                const SizedBox(width: 6),
+                Text('Or Sing Up With',
+                    style: Theme.of(context).textTheme.labelMedium),
+                const SizedBox(width: 6),
+                const Flexible(
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+                    indent: 5,
+                    endIndent: 40,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
