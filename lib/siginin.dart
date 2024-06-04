@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapplication/singIn.dart';
 import 'package:flutterapplication/newaccaunt.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -8,6 +9,7 @@ class SigninScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Scaffold(
       body: SingleChildScrollView(
           child: Padding(
@@ -26,6 +28,7 @@ class SigninScreen extends StatelessWidget {
             Form(
               child: Column(
                 children: [
+                  /// E-Mail
                   TextFormField(
                     decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -45,25 +48,38 @@ class SigninScreen extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        borderSide: const BorderSide(color: Colors.grey),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0xFF001254),
+
+                  ///Password
+                  Obx(
+                    () => TextFormField(
+                      obscureText: controller.hidePassword.value,
+                      controller: controller.password,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(color: Colors.grey),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFF001254),
+                          ),
+                        ),
+
+                        /// prefix: const Icon(
+                        //Iconsax.direct_right,
+                        /// ),
+                        labelText: 'Password',
+                        suffixIcon: IconButton(
+                          onPressed: () => controller.hidePassword.value =
+                              !controller.hidePassword.value,
+                          icon: const Icon (Iconsax.eye_slash),
                         ),
                       ),
-                      prefix: const Icon(
-                        Iconsax.direct_right,
-                      ),
-                      labelText: 'Password',
-                      suffixIcon: const Icon(Iconsax.eye_slash),
                     ),
                   ),
                   const SizedBox(height: 16),
+
+                  /// Remember
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -79,10 +95,14 @@ class SigninScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
+
+                  /// Sign in
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const SingIn());
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF6750A4),
                           shape: RoundedRectangleBorder(
@@ -95,6 +115,8 @@ class SigninScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
+
+                  ///crate new account
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -122,29 +144,27 @@ class SigninScreen extends StatelessWidget {
   }
 }
 
+/// Welcome
 class Logoandtitle extends StatelessWidget {
   const Logoandtitle({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Image(
-          height: 150,
+          height: 160,
           image: AssetImage('assets/images/logo.png'),
         ),
+        const SizedBox(height: 8),
         Text(
           'Welocome',
           style: Theme.of(context).textTheme.bodyLarge,
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Text(
-          '',
-          style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],
     );
   }
 }
+
+/// yordamchi class pasword
+

@@ -212,6 +212,44 @@ class _CreateNewAccauntState extends State<CreateNewAccaunt> {
                   ),
                 ),
               ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ///Google Button
+                Container(
+                  padding: const EdgeInsets.all(4.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(500),
+                  ),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Image(
+                        width: 28,
+                        height: 28,
+                        image: AssetImage('assets/images/google.jpg')),
+                  ),
+                ),
+
+                /// Apple Button
+                const SizedBox(width: 16),
+                Container(
+                  padding: const EdgeInsets.all(4.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(500),
+                  ),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Image(
+                      width: 28,
+                      height: 28,
+                      image: AssetImage('assets/images/google.jpg'),
+                    ),
+                  ),
+                ),
+              ],
             )
           ],
         ),
